@@ -13,6 +13,12 @@
 		A4DCB1E11ADB2B2100FD73E5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4DCB1E01ADB2B2100FD73E5 /* Images.xcassets */; };
 		A4DCB1E41ADB2B2100FD73E5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4DCB1E21ADB2B2100FD73E5 /* LaunchScreen.xib */; };
 		A4DCB1F01ADB2B2200FD73E5 /* MusicPlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DCB1EF1ADB2B2200FD73E5 /* MusicPlayerTests.swift */; };
+		A4DCB1FA1ADB362100FD73E5 /* NetworkMusicTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DCB1F91ADB362100FD73E5 /* NetworkMusicTableViewController.swift */; };
+		A4DCB1FC1ADB365400FD73E5 /* NetworkMusicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DCB1FB1ADB365400FD73E5 /* NetworkMusicViewController.swift */; };
+		A4DCB1FE1ADB369600FD73E5 /* LocalMusicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DCB1FD1ADB369600FD73E5 /* LocalMusicViewController.swift */; };
+		A4DCB2001ADB36A800FD73E5 /* LocalMusicTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DCB1FF1ADB36A800FD73E5 /* LocalMusicTableViewController.swift */; };
+		A4DCB2021ADB3C8C00FD73E5 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DCB2011ADB3C8C00FD73E5 /* Channel.swift */; };
+		A4DCB2041ADB490100FD73E5 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DCB2031ADB490100FD73E5 /* Song.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +42,12 @@
 		A4DCB1E91ADB2B2200FD73E5 /* MusicPlayerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MusicPlayerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4DCB1EE1ADB2B2200FD73E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A4DCB1EF1ADB2B2200FD73E5 /* MusicPlayerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayerTests.swift; sourceTree = "<group>"; };
+		A4DCB1F91ADB362100FD73E5 /* NetworkMusicTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkMusicTableViewController.swift; sourceTree = "<group>"; };
+		A4DCB1FB1ADB365400FD73E5 /* NetworkMusicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkMusicViewController.swift; sourceTree = "<group>"; };
+		A4DCB1FD1ADB369600FD73E5 /* LocalMusicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalMusicViewController.swift; sourceTree = "<group>"; };
+		A4DCB1FF1ADB36A800FD73E5 /* LocalMusicTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalMusicTableViewController.swift; sourceTree = "<group>"; };
+		A4DCB2011ADB3C8C00FD73E5 /* Channel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
+		A4DCB2031ADB490100FD73E5 /* Song.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +92,12 @@
 				A4DCB1D91ADB2B2100FD73E5 /* AppDelegate.swift */,
 				A4DCB1DB1ADB2B2100FD73E5 /* ViewController.swift */,
 				A4DCB1DD1ADB2B2100FD73E5 /* Main.storyboard */,
+				A4DCB1FF1ADB36A800FD73E5 /* LocalMusicTableViewController.swift */,
+				A4DCB1FD1ADB369600FD73E5 /* LocalMusicViewController.swift */,
+				A4DCB1F91ADB362100FD73E5 /* NetworkMusicTableViewController.swift */,
+				A4DCB1FB1ADB365400FD73E5 /* NetworkMusicViewController.swift */,
+				A4DCB2011ADB3C8C00FD73E5 /* Channel.swift */,
+				A4DCB2031ADB490100FD73E5 /* Song.swift */,
 				A4DCB1E01ADB2B2100FD73E5 /* Images.xcassets */,
 				A4DCB1E21ADB2B2100FD73E5 /* LaunchScreen.xib */,
 				A4DCB1D71ADB2B2100FD73E5 /* Supporting Files */,
@@ -212,8 +230,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4DCB2021ADB3C8C00FD73E5 /* Channel.swift in Sources */,
 				A4DCB1DC1ADB2B2100FD73E5 /* ViewController.swift in Sources */,
+				A4DCB2001ADB36A800FD73E5 /* LocalMusicTableViewController.swift in Sources */,
 				A4DCB1DA1ADB2B2100FD73E5 /* AppDelegate.swift in Sources */,
+				A4DCB2041ADB490100FD73E5 /* Song.swift in Sources */,
+				A4DCB1FE1ADB369600FD73E5 /* LocalMusicViewController.swift in Sources */,
+				A4DCB1FC1ADB365400FD73E5 /* NetworkMusicViewController.swift in Sources */,
+				A4DCB1FA1ADB362100FD73E5 /* NetworkMusicTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

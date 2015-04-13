@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="T12-Gf-jn8">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Music Player-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MusicPlayer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +15,163 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PoW-AE-8dR">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K6l-AN-osg">
+                                <rect key="frame" x="265" y="290" width="71" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="PoW-AE-8dR" secondAttribute="trailing" id="1UV-lC-KlY"/>
+                            <constraint firstItem="PoW-AE-8dR" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Bpu-yV-ePb"/>
+                            <constraint firstItem="PoW-AE-8dR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="JXd-lW-5hS"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="PoW-AE-8dR" secondAttribute="bottom" id="MuK-3D-ApW"/>
+                            <constraint firstAttribute="centerY" secondItem="K6l-AN-osg" secondAttribute="centerY" id="U4p-FJ-O5r"/>
+                            <constraint firstAttribute="centerX" secondItem="K6l-AN-osg" secondAttribute="centerX" id="aNU-81-Ub1"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Music Player" id="FBj-Rs-Pgm">
+                        <barButtonItem key="leftBarButtonItem" title="Local Music" id="K4R-ae-UlN">
+                            <connections>
+                                <segue destination="CkM-yr-44E" kind="show" id="yPU-6A-8iW"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Network Music" id="x1d-uZ-erT">
+                            <connections>
+                                <segue destination="VPu-Py-pu6" kind="show" id="Lhh-vP-Qvs"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="bgImageView" destination="PoW-AE-8dR" id="qV6-bU-8Jb"/>
+                        <outlet property="promptLabel" destination="K6l-AN-osg" id="yKU-ha-75O"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1117" y="361"/>
+        </scene>
+        <!--Local Music List-->
+        <scene sceneID="e1p-AI-sfL">
+            <objects>
+                <tableViewController id="CkM-yr-44E" customClass="LocalMusicTableViewController" customModule="MusicPlayer" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="dWh-eb-uJk">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="Tid-xq-wpS">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Tid-xq-wpS" id="2KH-EB-cb2">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="UaH-Ur-L8n" kind="show" id="P8O-qa-Vzo"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="CkM-yr-44E" id="HoA-5x-O3x"/>
+                            <outlet property="delegate" destination="CkM-yr-44E" id="WBh-4n-Mmf"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Local Music List" id="KeP-E2-anF"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jO1-5G-tLM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1832" y="-43"/>
+        </scene>
+        <!--Local Music-->
+        <scene sceneID="EJp-4L-jer">
+            <objects>
+                <viewController id="UaH-Ur-L8n" customClass="LocalMusicViewController" customModule="MusicPlayer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2pm-bO-m3D"/>
+                        <viewControllerLayoutGuide type="bottom" id="3sg-g8-K7v"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="l3d-3g-eMg">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Local Music" id="Kj4-BO-w4x"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9dZ-VG-QtY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2668" y="-43"/>
+        </scene>
+        <!--Network Music List-->
+        <scene sceneID="H1C-Nk-rLB">
+            <objects>
+                <tableViewController id="VPu-Py-pu6" customClass="NetworkMusicTableViewController" customModule="MusicPlayer" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="6mL-9X-dFP">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="DnO-Cf-3n5">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DnO-Cf-3n5" id="fiv-dg-SoK">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="xfQ-KG-7vp" kind="show" id="yUC-da-4iA"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="VPu-Py-pu6" id="mqU-s2-fW4"/>
+                            <outlet property="delegate" destination="VPu-Py-pu6" id="RuB-Cq-ArQ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Network Music List" id="y60-11-fB8"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H6C-af-evb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1832" y="777"/>
+        </scene>
+        <!--Network Music-->
+        <scene sceneID="jhh-Sm-2Z5">
+            <objects>
+                <viewController id="xfQ-KG-7vp" customClass="NetworkMusicViewController" customModule="MusicPlayer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="z3Q-S6-iTF"/>
+                        <viewControllerLayoutGuide type="bottom" id="3WH-eo-jO3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="MCB-ZZ-7RV">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Network Music" id="y8q-7p-18A"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z0Z-N5-tYw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2668" y="777"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="pXH-lc-VQc">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="T12-Gf-jn8" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1JF-ro-c41">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="jZ6-tp-RJt"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DMh-RW-RgB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="386" y="361"/>
         </scene>
     </scenes>
 </document>

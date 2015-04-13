@@ -9,6 +9,8 @@
 import UIKit
 
 class ViewController: UIViewController {
+    @IBOutlet weak var promptLabel: UILabel!
+    @IBOutlet weak var bgImageView: UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
