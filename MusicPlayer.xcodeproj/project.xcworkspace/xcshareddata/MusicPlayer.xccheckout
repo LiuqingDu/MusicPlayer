@@ -14,7 +14,7 @@
 		<string>https://github.com/LiuqingDu/MusicPlayer.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>MusicPlayer.xcodeproj</string>
+	<string>MusicPlayer.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>ECF5137BBB4D5D310F1CF7D04501F57755C33A54</key>
